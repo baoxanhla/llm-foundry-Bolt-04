@@ -27,7 +27,10 @@ tokenizer:
 train_loader:
   name: finetuning
   dataset:
-    hf_name: /kaggle/input/law-phogpt-chat/data_phoGPT/data_rp.jsonl
+    hf_name: json
+    hf_kwargs:
+      data_dir: /kaggle/input/law-phogpt-chat/data_phoGPT/
+      data_files: data_rp.jsonl
     split: train
     shuffle: true
     max_seq_len: ${max_seq_len}
